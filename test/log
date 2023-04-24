@@ -1,0 +1,98 @@
+@#$info-registers:
+##################################################
+rax            0x562b76391044	94744667033668
+rbx            0x0	0
+rcx            0xffffff0c	4294967052
+rdx            0xffffffffffffff02	-254
+rsi            0x562b775ea260	94744686273120
+rdi            0x1	1
+rbp            0x7ffe84e76120	0x7ffe84e76120
+rsp            0x7ffe84e76110	0x7ffe84e76110
+r8             0x0	0
+r9             0x0	0
+r10            0x0	0
+r11            0x246	582
+r12            0x562b7618f920	94744664930592
+r13            0x7ffe84e76220	140731128177184
+r14            0x0	0
+r15            0x0	0
+rip            0x562b7618fb4e	0x562b7618fb4e <raise_oops+140>
+eflags         0x10286	[ PF SF IF RF ]
+cs             0x33	51
+ss             0x2b	43
+ds             0x0	0
+es             0x0	0
+fs             0x0	0
+gs             0x0	0
+
+##################################################
+<==end
+@#$info-bt:
+##################################################
+#0  0x0000562b7618fb4e in raise_oops () at /home/ptcs/cjh/linux_debug/fault_test/array_index_out_range/cmpx/demo_simple/src/Mw/Camera/MwCamera.c:18
+#1  0x0000562b7618fa77 in main () at /home/ptcs/cjh/linux_debug/fault_test/array_index_out_range/cmpx/demo_simple/src/App/AppMain.c:28
+
+##################################################
+<==end
+@#$info-asm:
+##################################################
+Dump of assembler code for function raise_oops:
+   0x0000562b7618fac2 <+0>:	push   %rbp
+   0x0000562b7618fac3 <+1>:	mov    %rsp,%rbp
+   0x0000562b7618fac6 <+4>:	sub    $0x10,%rsp
+   0x0000562b7618faca <+8>:	movl   $0x1,-0x4(%rbp)
+   0x0000562b7618fad1 <+15>:	mov    -0x4(%rbp),%eax
+   0x0000562b7618fad4 <+18>:	add    $0xa,%eax
+   0x0000562b7618fad7 <+21>:	mov    %eax,%ecx
+   0x0000562b7618fad9 <+23>:	mov    -0x4(%rbp),%eax
+   0x0000562b7618fadc <+26>:	movslq %eax,%rdx
+   0x0000562b7618fadf <+29>:	lea    0x20155e(%rip),%rax        # 0x562b76391044 <info>
+   0x0000562b7618fae6 <+36>:	mov    %cl,(%rdx,%rax,1)
+   0x0000562b7618fae9 <+39>:	lea    -0x2e(%rip),%rdx        # 0x562b7618fac2 <raise_oops>
+   0x0000562b7618faf0 <+46>:	lea    0x161(%rip),%rsi        # 0x562b7618fc58 <__FUNCTION__.2259>
+   0x0000562b7618faf7 <+53>:	lea    0x13a(%rip),%rdi        # 0x562b7618fc38
+   0x0000562b7618fafe <+60>:	mov    $0x0,%eax
+   0x0000562b7618fb03 <+65>:	callq  0x562b7618f900 <printf@plt>
+   0x0000562b7618fb08 <+70>:	mov    -0x4(%rbp),%eax
+   0x0000562b7618fb0b <+73>:	movslq %eax,%rdx
+   0x0000562b7618fb0e <+76>:	lea    0x20152f(%rip),%rax        # 0x562b76391044 <info>
+   0x0000562b7618fb15 <+83>:	movzbl (%rdx,%rax,1),%eax
+   0x0000562b7618fb19 <+87>:	movsbl %al,%edx
+   0x0000562b7618fb1c <+90>:	mov    -0x4(%rbp),%eax
+   0x0000562b7618fb1f <+93>:	mov    %eax,%esi
+   0x0000562b7618fb21 <+95>:	lea    0x11c(%rip),%rdi        # 0x562b7618fc44
+   0x0000562b7618fb28 <+102>:	mov    $0x0,%eax
+   0x0000562b7618fb2d <+107>:	callq  0x562b7618f900 <printf@plt>
+   0x0000562b7618fb32 <+112>:	subl   $0xff,-0x4(%rbp)
+   0x0000562b7618fb39 <+119>:	mov    -0x4(%rbp),%eax
+   0x0000562b7618fb3c <+122>:	add    $0xa,%eax
+   0x0000562b7618fb3f <+125>:	mov    %eax,%ecx
+   0x0000562b7618fb41 <+127>:	mov    -0x4(%rbp),%eax
+   0x0000562b7618fb44 <+130>:	movslq %eax,%rdx
+   0x0000562b7618fb47 <+133>:	lea    0x2014f6(%rip),%rax        # 0x562b76391044 <info>
+=> 0x0000562b7618fb4e <+140>:	mov    %cl,(%rdx,%rax,1)
+   0x0000562b7618fb51 <+143>:	mov    -0x4(%rbp),%eax
+   0x0000562b7618fb54 <+146>:	movslq %eax,%rdx
+   0x0000562b7618fb57 <+149>:	lea    0x2014e6(%rip),%rax        # 0x562b76391044 <info>
+   0x0000562b7618fb5e <+156>:	movzbl (%rdx,%rax,1),%eax
+   0x0000562b7618fb62 <+160>:	movsbl %al,%edx
+   0x0000562b7618fb65 <+163>:	mov    -0x4(%rbp),%eax
+   0x0000562b7618fb68 <+166>:	mov    %eax,%esi
+   0x0000562b7618fb6a <+168>:	lea    0xd3(%rip),%rdi        # 0x562b7618fc44
+   0x0000562b7618fb71 <+175>:	mov    $0x0,%eax
+   0x0000562b7618fb76 <+180>:	callq  0x562b7618f900 <printf@plt>
+   0x0000562b7618fb7b <+185>:	mov    $0x0,%eax
+   0x0000562b7618fb80 <+190>:	leaveq 
+   0x0000562b7618fb81 <+191>:	retq   
+End of assembler dump.
+
+##################################################
+<==end
+@#$info-global_various:
+##################################################
+MwCamera.c :
+char info[2] = "\001\v"
+AppMain.c :
+static main_st mainInfo = {name = "main_struct", '\000' <repeats 20 times>, id = 18}
+##################################################
+<==end
