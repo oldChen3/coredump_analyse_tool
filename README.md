@@ -13,6 +13,10 @@
 6.对比两份core文件的数据区的内存（异常和正常设备的core文件），输出不同点()；  
 
 ## 变更履历  
+2023-04-25：增加实际调试例子，使用工具分析开源项目 mjpg-streamer(仓库为：https://github.com/jacksonliam/mjpg-streamer.git)  
+通过工具指定关注的源文件为：mjpg_streamer.c，分析其中的全局变量如下：
+![image](https://github.com/oldChen3/coredump_analyse_tool/blob/main/img/exmaple_mjpg.png)
+
 2023-04-25：完成功能：对比两份core文件（正常和出现异常情况下）中指定源文件的内容，并标注差异项。  
 功能结果如下：
 其中 右侧的 core1 是发生异常时保存内存数据，右侧是正常时导出的内存数据，对比两份数据，出现异常时，使用 ‘x’标注，否则不进行标注。  
