@@ -1,0 +1,45 @@
+@#$info-registers:
+##################################################
+rax            0x0	0
+rbx            0x0	0
+rcx            0x555561a61670	93825198855792
+rdx            0x61	97
+rsi            0x0	0
+rdi            0x555561a61680	93825198855808
+rbp            0x7ffe40fd93c0	0x7ffe40fd93c0
+rsp            0x7ffe40fd93a0	0x7ffe40fd93a0
+r8             0xa	10
+r9             0x0	0
+r10            0x555561a61010	93825198854160
+r11            0x0	0
+r12            0x55556019e610	93825172891152
+r13            0x7ffe40fd94a0	140729988781216
+r14            0x0	0
+r15            0x0	0
+rip            0x55556019e809	0x55556019e809 <main+239>
+eflags         0x10297	[ CF PF AF SF IF RF ]
+cs             0x33	51
+ss             0x2b	43
+ds             0x0	0
+es             0x0	0
+fs             0x0	0
+gs             0x0	0
+
+##################################################
+<==end
+@#$info-bt:
+##################################################
+#0  0x000055556019e809 in main (argc=2, argv=0x7ffe40fd94a8) at test.c:44
+
+##################################################
+<==end
+@#$info-global_various:
+##################################################
+test.c :
+int bb = 2
+struct day gudday = {day1 = {a = 0, b = 0}, day2 = 2, day3 = 0}
+Mgr_st mgr = {name = "static Mgr\000\000\000\000\000", id = 52, cmd = 255 '\377'}
+char *pointCan not access
+static Mgr_st *pMgr = {name = "test", '\000' <repeats 11 times>, id = 18, cmd = 97 'a'}
+##################################################
+<==end
